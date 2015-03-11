@@ -19,6 +19,10 @@ nav {
     padding:5px;
 	color: white;
 }
+a{
+	color: white;
+	text-decoration: none;
+}
 section {
     width:63%;
     float:left;
