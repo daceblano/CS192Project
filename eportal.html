@@ -29,32 +29,8 @@
 			<textarea id = "msgsent"></textarea>
 		</div>
 	</aside>
-
-	<section>
 	
-		<?php
-			$con=mysqli_connect("localhost", "root","admin");
-			mysqli_query($con,"USE cs192");
-			$result = mysqli_query($con, "SELECT * FROM Members");
-			echo "<table id='akosilek'>
-			<tr>
-			<th>LastName</th>
-			<th>FirstName</th>
-			<th>MiddleName</th>
-			</tr>";
-
-			while($row = mysqli_fetch_array($result)) {
-			  echo "<tr>";
-			  echo "<td>".$row['LastName']."</td>";
-			  echo "<td>".$row['FirstName']."</td>";
-			  echo "<td>".$row['MiddleName']."</td>";
-			  echo "</tr>";
-			}
-
-			//close connection
-			mysqli_close($con);
-		?>
-	</section>
+	<iframe width = 70.4% height = 93.1%></iframe>
 
 	<script type=text/javascript>
 		msent = document.getElementById("msgsent");
@@ -74,6 +50,11 @@
 					}, 1);  
 				}
 			}, false);
+		}
+		
+		function dario(){ //test function to see if hiding admin page is viable
+			td4 = document.getElementById("td4");
+			td4.innerHTML = "Admin"
 		}
 		//alert("compiled");
 	</script>
