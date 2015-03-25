@@ -1,0 +1,108 @@
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+aside {
+	width:29.25%;
+	height: 100%;
+	float: right;
+	
+	/*background-color: black;
+	position: fixed;*/
+}
+
+body {
+    background-image: url("../img/Totally not plagiarized.jpg");
+    background-color: rgb(0,70,0);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    	 
+}
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;	 
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+iframe{
+	/*border: none;*/
+}
+
+nav {
+    line-height: 250%; 
+    background-color: rgb(120,120,120);
+    height: 6%;
+    width:70.74%;
+    float:left;
+	color: white;
+	
+	/*text-align:justify;
+    padding:5px;
+	position: fixed;*/
+}
+
+section {
+    width:63%;
+    float:left;
+    padding: 50px;	
+	color: white;	
+	font-family: calibri;
+	
+	/*background-color: blue;*/
+}
+
+textarea{
+	width: 98.5%;
+	height: 93.45%;
+	resize: none;
+}
+
+#chatput {
+	width: 100%;
+	height: 20.05%;
+	background-color: green;
+	
+	/*padding: 1px;*/
+}
+
+#msgback {
+	width: 100%;
+	height: 80%;
+	background-color: rgba(255,255,255,0.5);
+	
+	/*margin: 3px;
+	opacity: 0.4;
+    filter: alpha(opacity=40);*/ /* For IE8 and earlier */
+}
+
+#msgs {
+	font-family: "tahoma";
+	font-size: 12px;
+	margin: 0px 10px;
+	
+	/*font-weight: bold;*/
+}
+
+#wews{
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	float: left;
+}
