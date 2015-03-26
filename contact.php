@@ -26,25 +26,30 @@ if (login_check($mysqli) == true) {
         ?> 
 		<header>
 			<div id="nav">
-				<div id="logo">
+				<div id="logo" class="div-logo">
 					<a href="index.php">
 						<img src="img/logo.png" alt="CURSOR site logo"/>
 					</a>
 				</div>
-				<div id="navtab">
-					<a href="about.php" >
-						<img src="img/about.png" alt="CURSOR site logo"/>
-					</a>
-				</div>
-				<div id="navtab">
-					<a href="events.php">
-						<img src="img/events.png" alt="CURSOR site logo"/>
-					</a>
-				</div>
-				<div id="navtab">
-					<a href="contact.php">
-						<img src="img/contact.png" alt="CURSOR site logo"/>
-					</a>
+				<div id="tabarea">
+					<div id="navtab" class="div-tab">
+						<a href="about.php" >
+							<img src="img/about.png" alt="About us"/>
+						</a>
+					</div>
+					<div id="navtab" class="div-tab">
+						<a href="events.php">
+							<img src="img/events.png" alt="Events"/>
+						</a>
+					</div>
+					<div id="navtab" class="div-tab">
+						<a href="contact.php">
+							<img src="img/contact.png" alt="Contact us"/>
+						</a>
+					</div>
+					<div id="navtab" class="div-tab">
+						<!-- buffer tab -->
+					</div>
 				</div>
 				<?php
 					if (login_check($mysqli) == true) {
