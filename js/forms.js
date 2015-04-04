@@ -15,48 +15,24 @@ function formhash(form, password) {
     form.submit();
 }
  
-function regformhash(form, uid, email, password, conf) {
+function createaccountformhash(form, snum, password) {
      // Check each field has a value
-    if (uid.value == ''         || 
-          email.value == ''     || 
-          password.value == ''  || 
-          conf.value == '') {
- 
+    if (snum.value == '' ||  password.value == '') {
         alert('You must provide all the requested details. Please try again');
         return false;
     }
  
-    // Check the username
- 
-    re = /^\w+$/; 
-    if(!re.test(form.username.value)) { 
-        alert("Username must contain only letters, numbers and underscores. Please try again"); 
-        form.username.focus();
+    // Check the student number if long enough and contains only digits
+    re = /^\d+$/;
+    if(!re.test(form.snum.value)) { 
+        alert("Student number must contain only digits"); 
+        form.snum.focus();
         return false; 
     }
- 
-    // Check that the password is sufficiently long (min 6 chars)
-    // The check is duplicated below, but this is included to give more
-    // specific guidance to the user
-    if (password.value.length < 6) {
-        alert('Passwords must be at least 6 characters long.  Please try again');
-        form.password.focus();
-        return false;
-    }
- 
-    // At least one number, one lowercase and one uppercase letter 
-    // At least six characters 
- 
-    var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 
-    if (!re.test(password.value)) {
-        alert('Passwords must contain at least one number, one lowercase and one uppercase letter.  Please try again');
-        return false;
-    }
- 
-    // Check password and confirmation are the same
-    if (password.value != conf.value) {
-        alert('Your password and confirmation do not match. Please try again');
-        form.password.focus();
+    // Check the length of the student number
+    if (snum.value.length < 9) {
+        alert('Student numbers are 9 digits long.  Please try again');
+        form.snumber.focus();
         return false;
     }
  
@@ -71,7 +47,6 @@ function regformhash(form, uid, email, password, conf) {
  
     // Make sure the plaintext password doesn't get sent. 
     password.value = "";
-    conf.value = "";
  
     // Finally submit the form. 
     form.submit();

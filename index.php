@@ -67,12 +67,12 @@ if (login_check($mysqli) == true) {
 											<col width="25">
 											<col width="5">
 											<tr>
-												<td>Username:</td>
+												<td>Student Number:</td>
 												<td colspan="2">Password:</td>
 											</tr>
 											<tr>
 												<td><input type = text size=15
-															name="email" 
+															name="snum" 
 															autofocus="true"
 															onkeydown="pressedEnter(event, this.form, this.form.password)"/></td>
 												<td><input type="password" 

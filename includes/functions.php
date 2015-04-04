@@ -24,18 +24,16 @@ function sec_session_start() {
     session_regenerate_id(true);    // regenerated the session, delete the old one. 
 }
 
-function login($email, $password, $mysqli) {
+function login($snum, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mysqli->prepare("SELECT id, username, password, salt 
-        FROM members
-        WHERE email = ?
-        LIMIT 1")) {
-        $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
+    if ($stmt = $mysqli->prepare("SELECT `Nickname`, `Password`, `Salt` FROM members
+        WHERE `StudentNumber` = ? LIMIT 1")) {
+        $stmt->bind_param('s', $snum);  // Bind "$snum" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
  
         // get variables from result.
-        $stmt->bind_result($user_id, $username, $db_password, $salt);
+        $stmt->bind_result($nick, $db_password, $salt);
         $stmt->fetch();
  
         // hash the password with the unique salt.
@@ -44,7 +42,7 @@ function login($email, $password, $mysqli) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
  
-            if (checkbrute($user_id, $mysqli) == true) {
+            if (checkbrute($snum, $mysqli) == true) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
                 return false;
@@ -56,15 +54,12 @@ function login($email, $password, $mysqli) {
                     // Get the user-agent string of the user.
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
                     // XSS protection as we might print this value
-                    $user_id = preg_replace("/[^0-9]+/", "", $user_id);
-                    $_SESSION['user_id'] = $user_id;
+                    $snum = preg_replace("/[^0-9]+/", "", $snum);
+                    $_SESSION['snum'] = $snum;
                     // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", 
-                                                                "", 
-                                                                $username);
-                    $_SESSION['username'] = $username;
-                    $_SESSION['login_string'] = hash('sha512', 
-                              $password . $user_browser);
+                    $nick = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $nick);
+                    $_SESSION['nick'] = $nick;
+                    $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
                     // Login successful.
                     return true;
                 } else {
@@ -111,22 +106,22 @@ function checkbrute($user_id, $mysqli) {
 
 function login_check($mysqli) {
     // Check if all session variables are set 
-    if (isset($_SESSION['user_id'], 
-                        $_SESSION['username'], 
+    if (isset($_SESSION['snum'], 
+                        $_SESSION['nick'], 
                         $_SESSION['login_string'])) {
  
-        $user_id = $_SESSION['user_id'];
+        $snum = $_SESSION['snum'];
         $login_string = $_SESSION['login_string'];
-        $username = $_SESSION['username'];
+        $nick = $_SESSION['nick'];
  
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $mysqli->prepare("SELECT password 
+        if ($stmt = $mysqli->prepare("SELECT Password 
                                       FROM members 
-                                      WHERE id = ? LIMIT 1")) {
+                                      WHERE `StudentNumber` = ? LIMIT 1")) {
             // Bind "$user_id" to parameter. 
-            $stmt->bind_param('i', $user_id);
+            $stmt->bind_param('s', $snum);
             $stmt->execute();   // Execute the prepared query.
             $stmt->store_result();
  
