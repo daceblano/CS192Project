@@ -36,7 +36,7 @@ sec_session_start();
 						</div>
 					</aside>
 					
-					<iframe width = 70.4% height = 93.1%></iframe>
+					<iframe width = 70.4% height = 93.1% src = 'eventlist.php' />
 
 					<script type=text/javascript>
 						msent = document.getElementById("msgsent");
