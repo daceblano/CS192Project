@@ -53,8 +53,12 @@ if (login_check($mysqli) == true) {
 				</div>
 				<?php
 					if (login_check($mysqli) == true) {
-						echo '<div id = "logout" >Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) .'';
-						echo '<p>Do you want to change user? <a href="includes/logout.php">Log out</a>.</p> </div>';
+						// echo '<div id = "logout" >Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['student_number']) .'';
+						echo '
+							<div id="logout">
+								Do you want to change user? <a href="includes/logout.php">Log out</a>
+								<a href="eportal.php">Portal</a>
+							</div>';
 					} else {
 							// echo '<p>Currently logged ' . $logged . '.</p>';
 							// echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
@@ -67,7 +71,7 @@ if (login_check($mysqli) == true) {
 											<col width="25">
 											<col width="5">
 											<tr>
-												<td>Username:</td>
+												<td>Student Number:</td>
 												<td colspan="2">Password:</td>
 											</tr>
 											<tr>
@@ -75,7 +79,7 @@ if (login_check($mysqli) == true) {
 															name="email" 
 															autofocus="true"
 															onkeydown="pressedEnter(event, this.form, this.form.password)"/></td>
-												<td><input type="password" 
+												<td><input type="password" size=15
 															name="password" 
 															id="password"
 															onkeydown="pressedEnter(event, this.form, this.form.password)"/></td>

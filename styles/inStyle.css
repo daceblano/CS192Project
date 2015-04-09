@@ -49,9 +49,10 @@ nav {
     line-height: 250%; 
     background-color: rgb(120,120,120);
     height: 6%;
-    width:70.74%;
+    width:100%;
     float:left;
 	color: white;
+	font-family: "Myriad Pro", Myriad, Calibri;
 	
 	/*text-align:justify;
     padding:5px;

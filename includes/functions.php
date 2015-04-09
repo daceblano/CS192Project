@@ -26,8 +26,8 @@ function sec_session_start() {
 
 function login($snum, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mysqli->prepare("SELECT `Nickname`, `Password`, `Salt` FROM members
-        WHERE `StudentNumber` = ? LIMIT 1")) {
+    if ($stmt = $mysqli->prepare("SELECT `nickname`, `password`, `salt` FROM members
+        WHERE `student_number` = ? LIMIT 1")) {
         $stmt->bind_param('s', $snum);  // Bind "$snum" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -117,9 +117,9 @@ function login_check($mysqli) {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
  
-        if ($stmt = $mysqli->prepare("SELECT Password 
+        if ($stmt = $mysqli->prepare("SELECT password 
                                       FROM members 
-                                      WHERE `StudentNumber` = ? LIMIT 1")) {
+                                      WHERE `student_number` = ? LIMIT 1")) {
             // Bind "$user_id" to parameter. 
             $stmt->bind_param('s', $snum);
             $stmt->execute();   // Execute the prepared query.

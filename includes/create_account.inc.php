@@ -9,7 +9,7 @@ if (isset($_POST['snum'], $_POST['p'])) {
     $snum = filter_input(INPUT_POST, 'snum', FILTER_SANITIZE_STRING);
  
 	// check existing student number
-	$prep_stmt = "SELECT * FROM members WHERE `StudentNumber` = ? LIMIT 1";
+	$prep_stmt = "SELECT * FROM members WHERE `student_number` = ? LIMIT 1";
     $stmt = $mysqli->prepare($prep_stmt);
 	
     if ($stmt) {
@@ -48,7 +48,7 @@ if (isset($_POST['snum'], $_POST['p'])) {
         $password = hash('sha512', $password . $random_salt);
  
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (StudentNumber, Password, Salt) VALUES (?, ?, ?)")) {
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (student_number, password, salt) VALUES (?, ?, ?)")) {
             $insert_stmt->bind_param('sss', $snum, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
