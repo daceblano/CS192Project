@@ -4,25 +4,25 @@ CREATE USER 'execomm'@'localhost' IDENTIFIED BY 'CURSORSEXY!!!15973';
 GRANT SELECT, INSERT, UPDATE ON `cs192`.* TO `execomm`@`localhost`;
 
 CREATE TABLE `cs192`.`members` (
-	`Nickname` VARCHAR(20),
-	`FirstName(s)` VARCHAR(30),
-	`LastName` VARCHAR(20),
-	`MiddleName` VARCHAR(20),
-	`Password` CHAR(128) NOT NULL,
-	`Salt` CHAR(128) NOT NULL,
-	`StudentNumber`	VARCHAR(10) NOT NULL PRIMARY KEY,
-	`Birthday` DATE,
-	`Degree program` VARCHAR(40),
-	`yahoom email` VARCHAR(50),
-	`google email` VARCHAR(50),
-	`globe num`	VARCHAR(10),
-	`smart num`	VARCHAR(10),
-	`sun num` VARCHAR(10),
-	`Landline` VARCHAR(10),
-	`Address` TEXT,
-	`Member status` ENUM('Inactive', 'Active', 'Alumni'),
-	`Committee` ENUM('acad', 'acti', 'exte', 'exec', 'fin', 'info', 'mem'),
-	`SchedString` TEXT
+	`student_number` VARCHAR(10) NOT NULL PRIMARY KEY,
+	`nickname` VARCHAR(20),
+	`first_name` VARCHAR(30),
+	`last_name` VARCHAR(20),
+	`middle_name` VARCHAR(20),
+	`birthday` DATE,
+	`degree_program` VARCHAR(40),
+	`mail_main` VARCHAR(50),
+	`mail_alt` VARCHAR(50),
+	`num_globe`	VARCHAR(10),
+	`num_smart`	VARCHAR(10),
+	`num_sun` VARCHAR(10),
+	`landline` VARCHAR(10),
+	`address` TEXT,
+	`status` ENUM('Inactive', 'Active', 'Alumni'),
+	`committee` ENUM('acad', 'acti', 'exte', 'exec', 'fin', 'info', 'mem', 'rex'),
+	`sched_string` TEXT,
+	`password` CHAR(128) NOT NULL,
+	`salt` CHAR(128) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE `cs192`.`login_attempts` (
@@ -31,12 +31,12 @@ CREATE TABLE `cs192`.`login_attempts` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `cs192`.`events` (
-	`Event ID` INT NOT NULL PRIMARY KEY,
-	`Title` VARCHAR(50) NOT NULL,
-	`Description` TEXT,
-	`Date created` DATE NOT NULL,
-	`Date done`	DATE,
-	`Display Pic Dir` VARCHAR(50),
-	`ListString` TEXT,
-	`Links` TEXT
+	`eventID` INT NOT NULL PRIMARY KEY,
+	`title` VARCHAR(50) NOT NULL,
+	`description` TEXT,
+	`date_created` DATE NOT NULL,
+	`date_held`	DATE,
+	`displayPic` VARCHAR(50),
+	`listString` TEXT,
+	`links` TEXT
 ) ENGINE=InnoDB;
