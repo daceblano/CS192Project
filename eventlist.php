@@ -18,7 +18,7 @@
 	while($row = mysqli_fetch_array($result)) {
 		echo "<tr>";
 		echo "<td><input name='title' type='submit' value='".$row['title']."'/></td>";
-		echo "<td>".$row['date']."</td>";
+		echo "<td>".$row['date_held']."</td>";
 		echo "<td>".$row['description']."</td>";
 		echo "</tr>";
 	}

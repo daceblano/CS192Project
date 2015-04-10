@@ -26,7 +26,7 @@ include_once 'includes/functions.php';
             Date: <input type="date" name="date" id="date" /><br>
 			Description: <input type="text" name="description" id="description" /><br>
 			<!-- not sure if needed to be changed to hash the values -->
-            <input type="submit" value="Submit"/> 
+            <input name="george" type="submit" value="Submit"/> 
         </form>
         <p>Return to the <a href="index.php">login page</a>.</p>
     </body>

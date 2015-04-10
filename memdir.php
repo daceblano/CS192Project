@@ -17,7 +17,7 @@ sec_session_start();
 					<td align=center width = 20% id = "td2"><a href="memdir.php">Member Directory</a></td>
 					<td align=center width = 20% id = "td3"><a href="edit_profile.php">Profile</a></td>
 					<?php
-						$val = true;
+						$val = admincheck($_SESSION['student_number'],$mysqli);
 						if($val) echo '<td align=center width = 20% id = "td4"><a href="admin.php">Admin Page</a></td>';
 						else echo '<td align=center width = 20% id = "td4"><a href="admin.php"></a></td>';
 					?>

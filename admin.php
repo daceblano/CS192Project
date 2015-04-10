@@ -10,6 +10,7 @@ sec_session_start();
         <meta charset="UTF-8">
         <title> The CURSOR Site</title>
         <link rel="stylesheet" href="styles/inStyle.css" />
+		<?php if (login_check($mysqli) == true) : ?>
 		<nav>
 			<table width = 100% >
 				<tr>
@@ -18,7 +19,6 @@ sec_session_start();
 					<td align=center width = 20% id = "td3"><a href="edit_profile.php">Profile</a></td>
 					<td align=center width = 20% id = "td4"><a href="admin.php">Admin Page</a></td>
 					<td align=center width="20%" id="td5">
-						<?php if (login_check($mysqli) == true) : ?>
 						<!-- <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>  -->
 						Welcome User!
 						<a href="index.php">Return to index</a>

@@ -76,7 +76,7 @@ if (login_check($mysqli) == true) {
 											</tr>
 											<tr>
 												<td><input type = text size=15
-															name="email" 
+															name="snum" 
 															autofocus="true"
 															onkeydown="pressedEnter(event, this.form, this.form.password)"/></td>
 												<td><input type="password" size=15

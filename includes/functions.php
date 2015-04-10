@@ -182,4 +182,17 @@ function esc_url($url) {
         return $url;
     }
 }
+
+function admincheck($snum, $mysqli){
+    if ($stmt = $mysqli->prepare("SELECT `committee` FROM members
+            WHERE `student_number` = ? LIMIT 1")) {
+            $stmt->bind_param('s', $snum);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            $result = $res->fetch_assoc();
+
+        if($result['committee']=='exec') return true;
+    }
+    return false;
+}
 ?>
