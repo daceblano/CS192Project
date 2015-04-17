@@ -10,10 +10,10 @@ if (isset($_POST['snum'], $_POST['p'])) {
  
     if (login($snum, $password, $mysqli) == true) {
         // Login success 
-        header('Location: ../eportal.php');
+        header('Location: ../index.php');
     } else {
         // Login failed 
-        header('Location: ../index.php?error=1');
+        header('Location: ../login.php?error=1');
     }
 } else {
     // The correct POST variables were not sent to this page. 
