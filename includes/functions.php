@@ -55,7 +55,7 @@ function login($snum, $password, $mysqli) {
                     $user_browser = $_SERVER['HTTP_USER_AGENT'];
                     // XSS protection as we might print this value
                     $snum = preg_replace("/[^0-9]+/", "", $snum);
-                    $_SESSION['student_number'] = $snum;
+                    $_SESSION['snum'] = $snum;
                     // XSS protection as we might print this value
                     $nick = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $nick);
                     $_SESSION['nick'] = $nick;
@@ -106,11 +106,11 @@ function checkbrute($user_id, $mysqli) {
 
 function login_check($mysqli) {
     // Check if all session variables are set 
-    if (isset($_SESSION['student_number'], 
+    if (isset($_SESSION['snum'], 
                         $_SESSION['nick'], 
                         $_SESSION['login_string'])) {
  
-        $snum = $_SESSION['student_number'];
+        $snum = $_SESSION['snum'];
         $login_string = $_SESSION['login_string'];
         $nick = $_SESSION['nick'];
  
