@@ -13,7 +13,7 @@ sec_session_start();
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<link rel="icon" href="../../favicon.ico">
 
-	<title>The CURSOR Site - Member Directory</title>
+	<title>The CURSOR Site - Events Portal</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="styles/inner.css" rel="stylesheet">
 </head>
@@ -34,8 +34,8 @@ sec_session_start();
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="eportal.php"><span class="glyphicon glyphicon-tasks"></span> Events Portal</a></li>
-							<li class="active"><a href="memdir.php"><span class="glyphicon glyphicon-list-alt"></span> Member Directory</a></li>						
-							<li><a href="profile.php"><span class="glyphicon glyphicon-credit-card"></span> Profile</a></li>';
+							<li><a href="memdir.php"><span class="glyphicon glyphicon-list-alt"></span> Member Directory</a></li>						
+							<li class="active"><a href="profile.php"><span class="glyphicon glyphicon-credit-card"></span> Profile</a></li>';
 							$val = admincheck($_SESSION['student_number'], $mysqli);
 							if($val) echo '<li><a href="admin.php"><span class="glyphicon glyphicon-briefcase"></span> Admin Page</a></li>';
 							echo '</ul>';
@@ -69,7 +69,7 @@ sec_session_start();
 	echo '
 		<div class="content-container">
 			<div class="embed-container">
-				<iframe frameborder=1 src="memberlist.php" />
+				<iframe frameborder=1 src="profile_content.php" />
 			</div>
 		</div>
 	';

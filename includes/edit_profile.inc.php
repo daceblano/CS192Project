@@ -36,7 +36,12 @@ if(isset($_POST['edit_profile'])) {
 		if (! $stmt->execute()) {
 			header('Location: ../error.php?err=Registration failure: UPDATE');
 		}
+		$_SESSION['nick'] = $nickname;
 		 header('Location: ./eportal.php');
 	}
 }
+elseif(isset($_POST['cancel'])) {
+	header('Location: ./profile_content.php');
+}
+
 ?>

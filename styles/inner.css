@@ -1,0 +1,31 @@
+ body {
+	margin: 0px;
+	background-color: #33a25c;
+}
+.content-container{
+	padding-top: 50px;
+	height: 100vh;
+}
+.embed-container {
+	position: relative;
+	overflow: hidden; 
+	max-width: 100%;
+	height: 92vh;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: inherit;
+	top: 0; 
+	left: 0;
+	width: 75%;
+	min-height: 100%;
+	/*border: 0;*/
+}
+.brand-text {
+	color: #fff;
+	float: left;
+	height: 50px;
+	padding-top: 15px;
+	padding-right: 15px;
+	font-size: 18px;
+	line-height: 20px;
+}

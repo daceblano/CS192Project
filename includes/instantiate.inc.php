@@ -4,7 +4,7 @@ include_once 'psl-config.php';
  
 $error_msg = "";
  
-if (isset($_POST['george'])) {
+if (isset($_POST['submit'])) {
     // Sanitize and validate the data passed in
     $title= filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $date_h = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
@@ -22,3 +22,7 @@ if (isset($_POST['george'])) {
         header('Location: ./eportal.php');
     }
 }
+elseif (isset($_POST['cancel'])) {
+	header('Location: ./admin_content.php');
+}
+?>

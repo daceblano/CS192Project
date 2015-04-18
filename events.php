@@ -20,19 +20,15 @@ if (login_check($mysqli) == true) {
 	<link rel="icon" href="../../favicon.ico">
 
 	<title>The CURSOR Site</title>
-
-	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.css" rel="stylesheet">
-
-	<!-- Custom styles for this template -->
-	<link href="styles/starter-template.css" rel="stylesheet">
+	<link href="styles/external-style.css" rel="stylesheet">
 </head>
 
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="navbar-brand" href="index.php">
+				<a class="nav-img-brand" href="index.php">
 					<img src="img/logo.png" alt="The CURSOR site" width="100" />
 				</a>
 				<div class="navbar-header">
@@ -45,10 +41,10 @@ if (login_check($mysqli) == true) {
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="index.php">Home</a></li>
-						<li><a href="about.php">About</a></li>
-						<li class="active"><a href="events.php">Events</a></li>
-						<li><a href="contact.php">Contact</a></li>
+						<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<li><a href="about.php"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+						<li class="active"><a href="events.php"><span class="glyphicon glyphicon-list"></span> Events</a></li>
+						<li><a href="contact.php"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
 					</ul>
 					<?php
 						if(login_check($mysqli) == true){
@@ -66,10 +62,12 @@ if (login_check($mysqli) == true) {
 						else{
 							echo '
 								<form action="includes/process_login.php" method="post" name="login_form" class="navbar-form form-inline pull-right">
-								 	<font color="#fff">Member Login:</font> 
-									<input type="text" name="snum" class="span1" placeholder="Student Number" onkeydown="pressedEnter(event, this.form, this.form.password)"/>
-									<input type="password" name="password" class="span1" placeholder="Password" onkeydown="pressedEnter(event, this.form, this.form.password)"/>
-									<input type="button" value="Login" class="btn" onclick="formhash(this.form, this.form.password)"/>
+									<div class="form-group-sm">
+								 		<label><font color="#fff">Member Login:</font></label>
+										<input type="text" name="snum" class="span1 form-control" placeholder="Student Number" onkeydown="pressedEnter(event, this.form, this.form.password)"/>
+										<input type="password" name="password" class="span1 form-control" placeholder="Password" onkeydown="pressedEnter(event, this.form, this.form.password)"/>
+										<input type="button" value="Login" class="btn" onclick="formhash(this.form, this.form.password)"/>
+									</div>
 								</form>
 							';
 						}
@@ -89,5 +87,7 @@ if (login_check($mysqli) == true) {
 	</div>
 
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/JavaScript" src="js/sha512.js"></script> 
+	<script type="text/JavaScript" src="js/forms.js"></script> 
 	</body>
 </html>

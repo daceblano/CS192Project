@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +13,14 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="starter-template.css" rel="stylesheet">
+	<link href="styles/external-style.css" rel="stylesheet">
 </head>
 
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="navbar-brand" href="index.php">
+				<a class="nav-img-brand" href="index.php">
 					<img src="img/logo.png" alt="The CURSOR site" width="100" />
 				</a>
 				<div class="navbar-header">
@@ -34,10 +33,10 @@
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="events.php">Events</a></li>
-						<li><a href="contact.php">Contact</a></li>
+						<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<li><a href="about.php"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+						<li><a href="events.php"><span class="glyphicon glyphicon-list"></span> Events</a></li>
+						<li><a href="contact.php"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -50,7 +49,7 @@
 		<font color="#fff">Member Login:</font> <br>
 		<form action="includes/process_login.php" method="post" name="login_form"  >
 		<?php
-			if (isset($_GET['error'])) echo '<p class="error">Error Logging In!</p>';
+			if (isset($_GET['error'])) echo '<div class="log-in-error"><font color="#a94442">Error: Invalid Log-in!</font></div>';
 		?>
 		<div class="form-group">
 			<label for="snum">Student number:</label>

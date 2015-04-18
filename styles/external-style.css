@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.nav-img-brand {
+  float: left;
+  height: 50px;
+}
+.log-in-error {
+  /*background-color: #fffabb;*/
+  background-color: #f2dede;
+}
