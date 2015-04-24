@@ -10,7 +10,6 @@ sec_session_start();
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<link rel="icon" href="../../favicon.ico">
 
 	<title>The CURSOR Site - Events Portal</title>
@@ -55,16 +54,6 @@ sec_session_start();
 			</div>
 		</nav>
 	';
-// <!-- 	<aside id = "aseid">
-// 		<div id = "msgback">
-// 			<div id = "msgs">
-// 				<br>
-// 			</div>
-// 		</div>
-// 		<div id = "chatput">
-// 			<textarea id = "msgsent"></textarea>
-// 		</div>
-// 	</aside> -->
 			
 	echo '
 		<div class="content-container">
@@ -73,27 +62,6 @@ sec_session_start();
 			</div>
 		</div>
 	';
-
-	// <script type=text/javascript>
-	// 	msent = document.getElementById("msgsent");
-	// 	mrecd = document.getElementById("msgs");
-		
-	// 	if(msent){
-	// 		msent.addEventListener("keydown", function(e){
-	// 			if(e.keyCode == 13){
-	// 				mrecd.innerHTML += '\t' + msent.value + '<br>';
-	// 				setTimeout(function(){ 
-	// 					msent.value = '';
-	// 				}, 1);  
-	// 			}
-	// 		}, false);
-	// 	}
-		
-	// 	function dario(){
-	// 		td4 = document.getElementById("td4");
-	// 		td4.innerHTML = "Admin"
-	// 	}
-	// </script>
 
 	}
 	else echo '<p>You are not authorized to access this page.</p>';

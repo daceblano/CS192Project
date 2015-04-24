@@ -55,17 +55,7 @@ sec_session_start();
 			</div>
 		</nav>
 	';
-// <!-- 	<aside id = "aseid">
-// 		<div id = "msgback">
-// 			<div id = "msgs">
-// 				<br>
-// 			</div>
-// 		</div>
-// 		<div id = "chatput">
-// 			<textarea id = "msgsent"></textarea>
-// 		</div>
-// 	</aside> -->
-			
+				
 	echo '
 		<div class="content-container">
 			<div class="embed-container">
@@ -73,27 +63,6 @@ sec_session_start();
 			</div>
 		</div>
 	';
-
-	// <script type=text/javascript>
-	// 	msent = document.getElementById("msgsent");
-	// 	mrecd = document.getElementById("msgs");
-		
-	// 	if(msent){
-	// 		msent.addEventListener("keydown", function(e){
-	// 			if(e.keyCode == 13){
-	// 				mrecd.innerHTML += '\t' + msent.value + '<br>';
-	// 				setTimeout(function(){ 
-	// 					msent.value = '';
-	// 				}, 1);  
-	// 			}
-	// 		}, false);
-	// 	}
-		
-	// 	function dario(){
-	// 		td4 = document.getElementById("td4");
-	// 		td4.innerHTML = "Admin"
-	// 	}
-	// </script>
 
 	}
 	else echo '<p>You are not authorized to access this page.</p>';

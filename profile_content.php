@@ -1,3 +1,9 @@
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+ 
+sec_session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +18,6 @@
 	<div class="content-panel">
 		<form action="edit_profile.php">
 			<div class="form-group">
-				<!-- <label>Create an Event:</label><br> -->
 				<button type="submit" class="btn btn-default">Edit Profile</button>
 			</div>
 		</form>
