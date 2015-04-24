@@ -58,3 +58,7 @@ if (isset($_POST['snum'], $_POST['p'])) {
         header('Location: ./account_creation_success.php');
     }
 }
+
+elseif (isset($_POST['cancel'])){
+    header('Location: ./admin_content.php');
+}
