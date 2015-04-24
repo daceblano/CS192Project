@@ -24,6 +24,8 @@ include_once 'includes/db_connect.php';
 	<p>Success!</p>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/JavaScript" src="js/sha512.js"></script> 
-	<script type="text/JavaScript" src="js/forms.js"></script> 
-</body>
+	<script type="text/JavaScript" src="js/forms.js"></script>
+	<script type="text/javascript">
+		window.top.location.reload();
+	</script></body>
 </html>
