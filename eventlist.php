@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link rel="stylesheet" href="styles/content-style.css" />
+	<link rel="stylesheet" href="css/content-style.css" />
 </head>
 <body>
 	<div class="content-panel">
@@ -29,8 +29,8 @@
 		// echo "<form method='post' action='workspace.php'>";
 		while($row = mysqli_fetch_array($result)) {
 			echo "<tr>";
-			echo "<td><input name='title' type='submit' value='".$row['title']."'/></td>";
-			echo "<td>".$row['date_held']."</td>";
+			echo "<td>".$row['title']."</td>";
+			echo "<td>".$row['date_created']."</td>";
 			echo "<td>".$row['description']."</td>";
 			echo "</tr>";
 		}

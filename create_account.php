@@ -10,7 +10,7 @@ include_once 'includes/functions.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="styles/content-style.css" />
+	<link rel="stylesheet" href="css/content-style.css" />
 </head>
 <body>
 	<!-- Registration form to be output if the POST variables are not
@@ -21,7 +21,7 @@ include_once 'includes/functions.php';
 			echo $error_msg;
 		}
 	?>
-	<form class="form-horizontal"  action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post">
+	<form class="form-horizontal" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post">
 		<div class="form-group">
 			<label for="snum" class="col-sm-2 control-label">Student Number</label>
 			<div class="col-sm-4">

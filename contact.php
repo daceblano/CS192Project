@@ -21,7 +21,7 @@ if (login_check($mysqli) == true) {
 
 	<title>The CURSOR Site</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="styles/external-style.css" rel="stylesheet">
+	<link href="css/external-style.css" rel="stylesheet">
 </head>
 
 <body>

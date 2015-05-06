@@ -10,11 +10,9 @@ include_once 'includes/db_connect.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="styles/content-style.css" />
+	<link rel="stylesheet" href="css/content-style.css" />
 </head>
 <body>
-	<!-- Registration form to be output if the POST variables are not
-	set or if the registration script caused an error. -->
 	<h1>Edit your profile</h1>
 	<?php
 		if (!empty($error_msg)) {
@@ -118,7 +116,7 @@ include_once 'includes/db_connect.php';
 		<div class="form-group">
 			<label for="address" class="col-sm-2 control-label"></label>
 			<div class="col-sm-1">
-				<input type="submit" class="btn btn-success" name="edit_profile"/>
+				<input type="submit" class="btn btn-success" name="edit_profile" value="Submit"/>
 			</div>
 			<div class="col-sm-1">
 				<input type="reset" class="btn btn-default" name="reset"/>

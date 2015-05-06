@@ -13,7 +13,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="styles/external-style.css" rel="stylesheet">
+	<link href="css/external-style.css" rel="stylesheet">
 </head>
 
 <body>

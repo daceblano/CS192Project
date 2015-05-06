@@ -15,7 +15,7 @@ sec_session_start();
 
 	<title>The CURSOR Site - Events Portal</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="styles/inner.css" rel="stylesheet">
+	<link href="css/inner.css" rel="stylesheet">
 </head>
 <body>
 	<?php if(login_check($mysqli) == true){
