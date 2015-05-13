@@ -1,8 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
- 
-sec_session_start();
+include_once 'includes/memdir.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,14 +55,31 @@ sec_session_start();
 		</nav>
 	';
 			
-	echo '
+		echo '
 		<div class="content-container">
 			<div class="embed-container">
-				<iframe frameborder=1 src="memberlist.php" />
+				<table class="table table-condensed table-hover table-striped">
+				<tr>
+				<th>ID</th>
+				<th>Last Name</th>
+				<th>First Name</th>
+				<th>Nickname</th>
+				<th>Email</th>
+				</tr>';
+				
+				$size = count($set);
+				for($i = 0; $i < $size; $i++) {
+					echo '<tr>';
+					echo '<td>"'.$set[$i]['student_number'].'"</td>';
+					echo '<td>'.$set[$i]['last_name'].'</td>';
+					echo '<td>'.$set[$i]['first_name'].'</td>';
+					echo '<td>'.$set[$i]['nickname'].'</td>';
+					echo '<td>'.$set[$i]['mail_main'].'</td>';
+					echo '</tr>';
+				}
+			echo'
 			</div>
-		</div>
-	';
-
+		</div>';
 	}
 	else echo '<p>You are not authorized to access this page.</p>';
 	?>

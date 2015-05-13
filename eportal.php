@@ -1,8 +1,7 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
- 
-sec_session_start();
+include_once 'includes/eportal.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,8 +57,25 @@ sec_session_start();
 				
 	echo '
 		<div class="content-container">
-			<div class="embed-container">
-				<iframe frameborder=1 src="eventlist.php" />
+			<div class="embed-container">';
+			echo 
+				'<table class="table table-condensed table-hover table-striped">
+				<tr>
+				<th>Event Title</th>
+				<th>Date</th>
+				<th>Description</th>
+				</tr>';
+				
+				$size = count($set);
+				for($i = 0; $i < $size; $i++) {
+					echo '<tr>';
+					echo '<td>'.$set[$i]['title'].'</td>';
+					echo '<td>'.$set[$i]['date_created'].'</td>';
+					echo '<td>'.$set[$i]['description'].'</td>';
+					echo '</tr>';
+				}
+				
+			echo '
 			</div>
 		</div>
 	';
