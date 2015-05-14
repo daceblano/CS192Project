@@ -5,6 +5,7 @@
 
 	$set = NULL;
 	if($stmt = $mysqli->prepare("SELECT * FROM members ORDER BY last_name ASC")) {
+		echo 'test <br>';
 		$stmt->execute();
 		$res = $stmt->get_result();
 		for ($set = array (); $row = $res->fetch_assoc(); $set[] = $row);

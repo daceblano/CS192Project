@@ -66,18 +66,16 @@ include_once 'includes/eportal.inc.php';
 				<th>Description</th>
 				</tr>';
 				
-				echo '<form method="post" action="workspace.php">';
 				$size = count($set);
 				for($i = 0; $i < $size; $i++) {
 					echo '<tr>';
-					echo '<td><button type="submit" name="eventID" value="'.$set[$i]['eventID'].'">'.$set[$i]['title'].'</button></td>';
+					echo '<td>'.$set[$i]['title'].'</td>';
 					echo '<td>'.$set[$i]['date_created'].'</td>';
 					echo '<td>'.$set[$i]['description'].'</td>';
 					echo '</tr>';
 				}
 				
 			echo '
-				</form>
 			</div>
 		</div>
 	';

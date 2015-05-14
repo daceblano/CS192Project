@@ -20,11 +20,8 @@ include_once 'includes/db_connect.php';
 		}
 	?>
 	<p>Your event has been created.</p>
-	<?php 
-	header('Refresh:2; URL="./admin.php"');
-	?>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/JavaScript" src="js/sha512.js"></script> 
-	<script type="text/JavaScript" src="js/forms.js"></script>
+	<script type="text/JavaScript" src="js/forms.js"></script> 
 </body>
 </html>

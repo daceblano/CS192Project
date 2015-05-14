@@ -70,7 +70,7 @@ include_once 'includes/memdir.inc.php';
 				$size = count($set);
 				for($i = 0; $i < $size; $i++) {
 					echo '<tr>';
-					echo '<td>'.$set[$i]['student_number'].'</td>';
+					echo '<td>"'.$set[$i]['student_number'].'"</td>';
 					echo '<td>'.$set[$i]['last_name'].'</td>';
 					echo '<td>'.$set[$i]['first_name'].'</td>';
 					echo '<td>'.$set[$i]['nickname'].'</td>';

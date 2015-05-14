@@ -32,7 +32,7 @@ if(isset($_POST['edit_profile'])) {
 	$address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
 	
 	if ($stmt = $mysqli->prepare("UPDATE members SET nickname = ?, first_name = ?, last_name = ?, middle_name = ?, birthday = ?, degree_program = ?, mail_main = ?, mail_alt = ?, num_globe = ?, num_smart = ?, num_sun = ?, landline = ?, address = ? WHERE student_number = ?")) {
-		$stmt->bind_param('ssssssssssssss', $nickname, $first_name, $last_name, $middle_name, $birthday, $degree_program, $mail_main, $mail_alt, $num_globe, $num_smart, $num_sun, $landline, $address, $_SESSION['student_number']);
+		$stmt->bind_param('ssssssssddddss', $nickname, $first_name, $last_name, $middle_name, $birthday, $degree_program, $mail_main, $mail_alt, $num_globe, $num_smart, $num_sun, $landline, $address, $_SESSION['student_number']);
 		if (! $stmt->execute()) {
 			header('Location: ../error.php?err=Registration failure: UPDATE');
 		}
@@ -43,7 +43,7 @@ if(isset($_POST['edit_profile'])) {
 	}
 }
 elseif(isset($_POST['cancel'])) {
-	header('Location: ./profile.php');
+	header('Location: ./profile_content.php');
 }
 
 ?>

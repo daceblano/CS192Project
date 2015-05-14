@@ -13,18 +13,20 @@ include_once 'includes/db_connect.php';
 	<link rel="stylesheet" href="css/content-style.css" />
 </head>
 <body>
-	<h1>Edit Profile</h1>
+	<!-- Registration form to be output if the POST variables are not
+	set or if the registration script caused an error. -->
+	<!-- <h1>Edit your profile</h1> -->
 	<?php
 		if (!empty($error_msg)) {
 			echo $error_msg;
 		}
 	?>
-	<p>Success!</p>
-	<?php 
-	header('Refresh:2; URL="./eportal.php"');
-	?>
+	<!-- <p>Success!</p> -->
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/JavaScript" src="js/sha512.js"></script> 
 	<script type="text/JavaScript" src="js/forms.js"></script>
-</body>
+	<script type="text/javascript">
+		// window.setTimeout('parent.location.reload()', 3000);
+		window.top.location.reload();
+	</script></body>
 </html>

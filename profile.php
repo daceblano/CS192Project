@@ -58,13 +58,7 @@ sec_session_start();
 	echo '
 		<div class="content-container">
 			<div class="embed-container">
-				<div class="content-panel">
-					<form action="edit_profile.php">
-						<div class="form-group">
-							<button type="submit" class="btn btn-default">Edit Profile</button>
-						</div>
-					</form>
-				</div>
+				<iframe frameborder=1 src="profile_content.php" />
 			</div>
 		</div>
 	';

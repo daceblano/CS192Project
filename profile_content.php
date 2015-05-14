@@ -1,6 +1,8 @@
 <?php
-include_once 'includes/workspace.inc.php';
 include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+ 
+sec_session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,22 +11,21 @@ include_once 'includes/db_connect.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/content-style.css" />
 </head>
 <body>
-	<h1>Edit Event</h1>
-	<?php
-		if (!empty($error_msg)) {
-			echo $error_msg;
-		}
-	?>
-	<p>Your event has been edited.</p>
-	<?php 
-	header('Refresh:2; URL="./eportal.php"');
-	?>
+	<div class="content-panel">
+		<form action="edit_profile.php">
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">Edit Profile</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/JavaScript" src="js/sha512.js"></script> 
-	<script type="text/JavaScript" src="js/forms.js"></script>
-</body>
+	<script type="text/JavaScript" src="js/forms.js"></script> 
 </html>

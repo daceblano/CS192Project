@@ -5,6 +5,7 @@
 
 	$set = NULL;
 	if($stmt = $mysqli->prepare("SELECT * FROM events")) {
+		echo 'test <br>';
 		$stmt->execute();
 		$res = $stmt->get_result();
 		for ($set = array (); $row = $res->fetch_assoc(); $set[] = $row);

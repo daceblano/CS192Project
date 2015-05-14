@@ -4,7 +4,7 @@ CREATE USER 'execomm'@'localhost' IDENTIFIED BY 'CURSORSEXY!!!15973';
 GRANT SELECT, INSERT, UPDATE ON `cs192`.* TO `execomm`@`localhost`;
 
 CREATE TABLE `cs192`.`members` (
-	`student_number` VARCHAR(10) NOT NULL PRIMARY KEY,
+	`student_number` VARCHAR(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	`nickname` VARCHAR(20),
 	`first_name` VARCHAR(30),
 	`last_name` VARCHAR(20),
@@ -31,7 +31,7 @@ CREATE TABLE `cs192`.`login_attempts` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `cs192`.`events` (
-	`eventID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`eventID` INT NOT NULL PRIMARY KEY,
 	`title` VARCHAR(50) NOT NULL,
 	`description` TEXT,
 	`date_created` DATE NOT NULL,
