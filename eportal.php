@@ -14,7 +14,7 @@ include_once 'includes/eportal.inc.php';
 
 	<title>The CURSOR Site - Events Portal</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/inner.css" rel="stylesheet">
+	<link href="css/internal-style.css" rel="stylesheet">
 </head>
 <body>
 	<?php if(login_check($mysqli) == true){
@@ -59,18 +59,22 @@ include_once 'includes/eportal.inc.php';
 		<div class="content-container">
 			<div class="embed-container">';
 			echo 
-				'<table class="table table-condensed table-hover table-striped">
+				'<table class="table table-condensed table-striped">
+				<thead>
 				<tr>
 				<th>Event Title</th>
-				<th>Date</th>
+				<th>Date of Event</th>
+				<th>Date Created</th>
 				<th>Description</th>
-				</tr>';
+				</tr>
+				</thead>';
 				
 				echo '<form method="post" action="workspace.php">';
 				$size = count($set);
 				for($i = 0; $i < $size; $i++) {
 					echo '<tr>';
-					echo '<td><button type="submit" name="eventID" value="'.$set[$i]['eventID'].'">'.$set[$i]['title'].'</button></td>';
+					echo '<td><button class="btn btn-success btn-xs" type="submit" name="eventID" value="'.$set[$i]['eventID'].'">'.$set[$i]['title'].'</button></td>';
+					echo '<td>'.$set[$i]['date_held'].'</td>';
 					echo '<td>'.$set[$i]['date_created'].'</td>';
 					echo '<td>'.$set[$i]['description'].'</td>';
 					echo '</tr>';
@@ -81,7 +85,6 @@ include_once 'includes/eportal.inc.php';
 			</div>
 		</div>
 	';
-
 	}
 	else echo '<p>You are not authorized to access this page.</p>';
 	?>

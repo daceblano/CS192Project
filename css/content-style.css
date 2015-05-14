@@ -1,14 +1,23 @@
 body {
-	padding-top: 0;
+	padding-top: 40px;
 	padding-left: 15px;
-}
-.content-panel {
-  padding: 40px 15px;
 }
 .form-horizontal .form-group {
   margin-right: 0;
   margin-left: 0;
 }
 .success {
+  background-color: #f2dede;
+}
+.brand-text {
+	color: #fff;
+	float: left;
+	height: 50px;
+	padding-top: 15px;
+	padding-right: 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+.form-error {
   background-color: #f2dede;
 }

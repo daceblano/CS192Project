@@ -14,7 +14,7 @@ include_once 'includes/memdir.inc.php';
 
 	<title>The CURSOR Site - Member Directory</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/inner.css" rel="stylesheet">
+	<link href="css/internal-style.css" rel="stylesheet">
 </head>
 <body>
 	<?php if(login_check($mysqli) == true){
@@ -59,14 +59,16 @@ include_once 'includes/memdir.inc.php';
 		<div class="content-container">
 			<div class="embed-container">
 				<table class="table table-condensed table-hover table-striped">
+				<thead>
 				<tr>
 				<th>ID</th>
 				<th>Last Name</th>
 				<th>First Name</th>
 				<th>Nickname</th>
 				<th>Email</th>
-				</tr>';
-				
+				</tr>
+				</thead>
+				';
 				$size = count($set);
 				for($i = 0; $i < $size; $i++) {
 					echo '<tr>';

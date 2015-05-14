@@ -55,11 +55,11 @@ if (isset($_POST['snum'], $_POST['p'])) {
                 header('Refresh:2; URL="../error.php?err=Account creation failure: INSERT"');
             }
         }
-        header('Refresh:2; URL="./account_creation_success.php"');
+        header('Location: ./account_creation_success.php');
     }
 }
 
 elseif (isset($_POST['cancel'])){
-    header('Refresh:2; URL="./admin.php"');
-	//header('Location: ./admin.php');
+    // header('Refresh:2; URL="./admin.php"');
+	header('Location: ./admin.php');
 }

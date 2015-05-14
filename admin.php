@@ -15,7 +15,7 @@ sec_session_start();
 
 	<title>The CURSOR Site - Events Portal</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/inner.css" rel="stylesheet">
+	<link href="css/internal-style.css" rel="stylesheet">
 </head>
 <body>
 	<?php if(login_check($mysqli) == true){
@@ -54,16 +54,6 @@ sec_session_start();
 			</div>
 		</nav>
 	';
-// <!-- 	<aside id = "aseid">
-// 		<div id = "msgback">
-// 			<div id = "msgs">
-// 				<br>
-// 			</div>
-// 		</div>
-// 		<div id = "chatput">
-// 			<textarea id = "msgsent"></textarea>
-// 		</div>
-// 	</aside> -->
 			
 	echo '
 		<div class="content-container">
@@ -73,7 +63,7 @@ sec_session_start();
 						<div class="form-group">
 							<input type="submit" class="btn btn-info col-sm-2" value="Event Creation" name="instantiate"/>
 							<div class="col-sm-8">
-								<span id="helpBlock" class="help-block">Create an event.</span>
+								<span id="helpBlock" class="help-block"><font color="#ffffff">Create an event.</font></span>
 							</div>
 						</div>
 					</form>
@@ -81,7 +71,7 @@ sec_session_start();
 						<div class="form-group">
 							<input type="submit" class="btn btn-info col-sm-2" value="Account Creation" name="create_account"/>
 							<div class="col-sm-10">
-								<span id="helpBlock" class="help-block">Create account for a new member to access the site.</span>
+								<span id="helpBlock" class="help-block"><font color="#ffffff">Create account for a new member to access the site.</font></span>
 							</div>
 						</div>
 					</form>
@@ -89,27 +79,6 @@ sec_session_start();
 			</div>
 		</div>
 	';
-
-	// <script type=text/javascript>
-	// 	msent = document.getElementById("msgsent");
-	// 	mrecd = document.getElementById("msgs");
-		
-	// 	if(msent){
-	// 		msent.addEventListener("keydown", function(e){
-	// 			if(e.keyCode == 13){
-	// 				mrecd.innerHTML += '\t' + msent.value + '<br>';
-	// 				setTimeout(function(){ 
-	// 					msent.value = '';
-	// 				}, 1);  
-	// 			}
-	// 		}, false);
-	// 	}
-		
-	// 	function dario(){
-	// 		td4 = document.getElementById("td4");
-	// 		td4.innerHTML = "Admin"
-	// 	}
-	// </script>
 
 	}
 	else echo '<p>You are not authorized to access this page.</p>';
