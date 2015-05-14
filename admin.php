@@ -68,7 +68,24 @@ sec_session_start();
 	echo '
 		<div class="content-container">
 			<div class="embed-container">
-				<iframe src="admin_content.php" class="content-frame" />
+				<div class="content-panel">
+					<form class="form-horizontal" action="instantiate.php">
+						<div class="form-group">
+							<input type="submit" class="btn btn-info col-sm-2" value="Event Creation" name="instantiate"/>
+							<div class="col-sm-8">
+								<span id="helpBlock" class="help-block">Create an event.</span>
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" action="create_account.php">
+						<div class="form-group">
+							<input type="submit" class="btn btn-info col-sm-2" value="Account Creation" name="create_account"/>
+							<div class="col-sm-10">
+								<span id="helpBlock" class="help-block">Create account for a new member to access the site.</span>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	';

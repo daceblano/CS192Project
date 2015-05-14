@@ -52,13 +52,14 @@ if (isset($_POST['snum'], $_POST['p'])) {
             $insert_stmt->bind_param('sss', $snum, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
-                header('Location: ../error.php?err=Account creation failure: INSERT');
+                header('Refresh:2; URL="../error.php?err=Account creation failure: INSERT"');
             }
         }
-        header('Location: ./account_creation_success.php');
+        header('Refresh:2; URL="./account_creation_success.php"');
     }
 }
 
 elseif (isset($_POST['cancel'])){
-    header('Location: ./admin_content.php');
+    header('Refresh:2; URL="./admin.php"');
+	//header('Location: ./admin.php');
 }
